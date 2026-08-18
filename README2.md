@@ -1,12 +1,11 @@
-# Bayesian Optimization Framework for HFSS Antenna Design
+# A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas
 
 Adaptive Bayesian-optimization pipeline for the inverse design of a micro-scale
 rectangular dielectric resonator antenna (DRA) using Ansys HFSS, Gaussian-process
 surrogate modeling, Expected Improvement, feasibility classification, and
 adaptive search-bound remodeling.
 
-This repository accompanies the manuscript submitted to *Optical and Quantum
-Electronics* (see [Citing this work](#citing-this-work)).
+This repository accompanies the manuscript *"A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"*" (currently under submission - see [Citing this work](#citing-this-work)).
 
 ## What this pipeline does
 
@@ -32,14 +31,10 @@ Electronics* (see [Citing this work](#citing-this-work)).
 
 ```text
 .
-├── src/
-│   └── pipeline_bo.py                  # main Bayesian-optimization pipeline
-├── notebooks/
-│   └── Pipeline_BO_Comp_clean.ipynb    # cleaned notebook version
-├── data/
-│   └── README.md                       # data-sharing policy and generated data
-├── docs/
-│   └── REPRODUCIBILITY.md              # execution and provenance notes
+├── pipeline_bo.py                      # main Bayesian-optimization pipeline
+├── Pipeline_BO_Comp_clean.ipynb        # cleaned notebook version
+├── README.md                           # data-sharing policy and generated data
+├── REPRODUCIBILITY.md                  # execution and provenance notes
 ├── requirements.txt                    # Python dependencies
 ├── environment.yml                     # Conda environment specification
 ├── .env.example                        # local HFSS path configuration example
@@ -83,11 +78,11 @@ $env:RESULTS_DIR="results"
 Then run:
 
 ```bash
-python src/pipeline_bo.py
+python pipeline_bo.py
 ```
 
 The target frequency and relative-permittivity grids are defined in the
-configuration section of `src/pipeline_bo.py`.
+configuration section of `pipeline_bo.py`.
 
 The default workflow performs the complete frequency/$\varepsilon_r$ grid,
 Bayesian optimization, adaptive bound remodeling, final rounded-design
@@ -96,11 +91,6 @@ validation, and figure generation.
 ## HFSS project and licensing
 
 The original `.aedt` HFSS project is **not distributed** in this repository.
-Likewise, HFSS-generated proprietary project/result files are excluded.
-
-This is intentional: the repository preserves the original optimization
-methodology and software implementation without redistributing third-party
-licensed Ansys/HFSS project assets.
 
 To reproduce the complete electromagnetic workflow, users must provide their
 own compatible HFSS project and valid Ansys license. The external HFSS project
@@ -123,45 +113,25 @@ generate:
 | `fig3_exploracao_espaco.png` | Parameter-space exploration plot. |
 | `fig4_ei_decay.png` | Acquisition-function decay plot, when available. |
 
-Temporary HFSS exports may also be produced during execution. These files are
-not automatically suitable for public redistribution; see [Data availability](#data-availability).
-
 ## Data availability
 
-The public repository separates **source code and documentation** from
-HFSS-dependent simulation assets.
+The source code and documentation are openly available in this repository. However, the datasets and electromagnetic simulation data generated through Ansys HFSS are **not distributed** because their redistribution is restricted by the applicable Ansys licensing terms.
 
-The following classes of derived data can be archived when redistribution is
-legally permitted by the applicable Ansys/institutional licensing conditions:
+This includes the HFSS project files, raw simulation outputs, and simulation-derived datasets generated during the optimization workflow.
 
-| File | Description |
-|---|---|
-| `resultados_bo.csv` | Optimization-history dataset produced from HFSS evaluations. |
-| `tabela_resultado_final.csv` | Final optimized and fabrication-rounded design. |
-| `resumo_grade_er_frequencia.csv` | Aggregate results for the target frequency/$\varepsilon_r$ grid. |
-| `historico_remodelagem_bounds.csv` | Adaptive search-bound diagnostics. |
-| `historico_adaptativo.csv` | Adaptive optimization decision summary. |
+The optimization pipeline is provided in full, allowing the methodology, algorithmic implementation, configuration, and data-processing procedures to be inspected and reused. Reproduction of the complete electromagnetic optimization, however, requires access to a compatible Ansys HFSS installation and the corresponding licensed simulation environment.
 
-The proprietary `.aedt` project and raw HFSS project/result directories are not
-distributed.
-
-Before publishing simulation-derived CSV files to Zenodo, confirm that their
-redistribution is allowed by the applicable license and institutional policy.
-If redistribution is not permitted, the code and documentation remain openly
-available while the restricted simulation assets are retained locally.
+Accordingly, the archive associated with this repository contains the open-source code and documentation, but does not include the restricted HFSS simulation data.
 
 ## Citing this work
 
-This repository accompanies a manuscript submitted to *Optical and Quantum
-Electronics*. Until the journal article receives its final DOI, please cite
+This manuscript is currently under submission and does not yet have a
+journal DOI. Until the journal article receives its final DOI, please cite
 the software release using the metadata in [`CITATION.cff`](./CITATION.cff).
 
 The canonical repository is:
 
 [**Bayesian-Optimization-Framework**](https://github.com/yMarcosGabriel/Bayesian-Optimization-Framework)
-
-A DOI for the archived software release will be added after the corresponding
-GitHub release is deposited in Zenodo.
 
 ## License
 
@@ -173,5 +143,5 @@ GitHub release is deposited in Zenodo.
 
 ## Contact
 
-Marcos Gabriel — Graduate Program in Electrical Engineering,
+Marcos Gabriel Santos— Graduate Program in Electrical Engineering,
 Universidade Federal do Pará (UFPA), Belém, PA, Brazil.
