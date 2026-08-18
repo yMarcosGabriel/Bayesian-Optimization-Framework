@@ -7,6 +7,7 @@ authors:
     given-names: Marcos G. F.
     affiliation: Universidade Federal do Pará
 repository-code: "https://github.com/yMarcosGabriel/Bayesian-Optimization-Framework"
+doi: "10.5281/zenodo.21995798"
 license: MIT
 version: 1.0.0
 date-released: 2026-08-18
