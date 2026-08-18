@@ -1,25 +1,20 @@
 cff-version: 1.2.0
-message: >-
-  If you use this software or the accompanying datasets, please cite it
-  using the metadata below.
+title: "A Bayesian Optimization Framework for Joint Frequency-Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"
+message: "If you use this software, please cite this repository and the associated manuscript."
 type: software
-title: >-
-A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas
 authors:
   - family-names: Santos
     given-names: Marcos G. F.
-    affiliation: >-
-      Graduate Program in Electrical Engineering, Universidade Federal do
-      Pará (UFPA), Belém, PA, Brazil
-    orcid: "https://orcid.org/0000-0003-1726-4283"
+    affiliation: Universidade Federal do Pará
 repository-code: "https://github.com/yMarcosGabriel/Bayesian-Optimization-Framework"
-license: "MIT"
-version: "1.0.0"
-date-released: "2026-08-18"
+license: MIT
+version: 1.0.0
+date-released: 2026-08-18
 keywords:
   - Bayesian optimization
+  - inverse design
   - antenna design
+  - terahertz antennas
   - HFSS
   - PyAEDT
   - Gaussian process
-  - electromagnetic simulation
