@@ -6,7 +6,8 @@ adaptive search-bound remodeling.
 
 This repository accompanies the manuscript *"A Bayesian Optimization Framework for Joint Frequency - Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"* (currently under submission - see [Citing this work](#citing-this-work)).
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21995798.svg)](https://doi.org/10.5281/zenodo.21995798)
+[![DOI](https://zenodo.org/badge/1338312149.svg)](https://doi.org/10.5281/zenodo.21995797)
+
 
 ## What this pipeline does
 
@@ -131,7 +132,7 @@ Accordingly, the public repository contains the open-source code and documentati
 
 This software is archived and publicly available through Zenodo:
 
-[https://doi.org/10.5281/zenodo.21995798](https://doi.org/10.5281/zenodo.21995798)
+(https://zenodo.org/badge/1338312149.svg)](https://doi.org/10.5281/zenodo.21995797)
 
 ## Citing this work
 
