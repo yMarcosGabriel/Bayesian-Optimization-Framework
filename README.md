@@ -138,7 +138,7 @@ The canonical repository is:
 
 ## License
 
-* Code (`src/`, `notebooks/`): [MIT License](./LICENSE)
+* Code and notebook: [MIT License](./LICENSE)
 * Third-party software, including Ansys Electronics Desktop/HFSS and PyAEDT,
   remains subject to its respective licenses.
 * HFSS project files and other restricted third-party assets are not covered
