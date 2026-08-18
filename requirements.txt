@@ -1,0 +1,6 @@
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+pyaedt==0.9.0

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Local configuration / secrets
+.env
+.env.*
+!.env.example
+
+# Ansys / HFSS proprietary or machine-generated files
+*.aedt
+*.aedtresults/
+*.aedt.lock
+*.lock
+*.aedb/
+*.aedtz
+*.hfss
+*.hfssresults/
+*.wbpj
+*.mechdb
+
+# Local simulation exports and logs
+*.log
+bo_temp_*.csv
+design_final_*.csv
+
+# Generated result directories
+results/*
+!results/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

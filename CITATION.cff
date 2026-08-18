@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Bayesian Optimization Pipeline for HFSS Antenna Design"
+message: "If you use this software, please cite the associated Optical and Quantum Electronics article and this software release."
+type: software
+authors:
+  - family-names: "Gabriel"
+    given-names: "Marcos"
+    affiliation: "Universidade Federal do Pará"
+repository-code: "https://github.com/REPLACE_WITH_YOUR_USERNAME/REPLACE_WITH_YOUR_REPOSITORY"
+license: "MIT"
+version: "1.0.0"
+date-released: "2026-08-18"
+keywords:
+  - Bayesian optimization
+  - antenna design
+  - HFSS
+  - PyAEDT
+  - Gaussian process
+  - electromagnetic simulation
