@@ -132,7 +132,7 @@ Accordingly, the public repository contains the open-source code and documentati
 
 This software is archived and publicly available through Zenodo:
 
-(https://zenodo.org/badge/1338312149.svg)](https://doi.org/10.5281/zenodo.21995797)
+https://doi.org/10.5281/zenodo.21995797
 
 ## Citing this work
 
