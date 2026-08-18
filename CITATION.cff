@@ -3,7 +3,8 @@ message: >-
   If you use this software or the accompanying datasets, please cite it
   using the metadata below.
 type: software
-title: >-A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas
+title: >-
+A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas
 authors:
   - family-names: Santos
     given-names: Marcos G. F.
