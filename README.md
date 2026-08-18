@@ -32,7 +32,7 @@ This repository accompanies the manuscript *"A Bayesian Optimization Framework f
 ```text
 .
 ├── pipeline_bo.py                      # main Bayesian-optimization pipeline
-├── Pipeline_BO_Comp_clean.ipynb        # cleaned notebook version
+├── Pipeline_BO_Comp.ipynb        # cleaned notebook version
 ├── README.md                           # data-sharing policy and generated data
 ├── REPRODUCIBILITY.md                  # execution and provenance notes
 ├── requirements.txt                    # Python dependencies
