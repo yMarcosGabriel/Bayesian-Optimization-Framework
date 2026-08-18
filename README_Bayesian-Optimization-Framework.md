@@ -1,0 +1,177 @@
+# Bayesian Optimization Framework for HFSS Antenna Design
+
+Adaptive Bayesian-optimization pipeline for the inverse design of a micro-scale
+rectangular dielectric resonator antenna (DRA) using Ansys HFSS, Gaussian-process
+surrogate modeling, Expected Improvement, feasibility classification, and
+adaptive search-bound remodeling.
+
+This repository accompanies the manuscript submitted to *Optical and Quantum
+Electronics* (see [Citing this work](#citing-this-work)).
+
+## What this pipeline does
+
+1. **Parametric HFSS simulation** — evaluates candidate antenna geometries over
+   target resonant frequencies and relative-permittivity values, extracting
+   $S_{11}$, $Z_{11}$, VSWR, bandwidth, and resonant frequency.
+2. **Latin Hypercube initialization** — generates the initial design of
+   experiments over the geometric search space.
+3. **Gaussian-process surrogate modeling** — learns the objective function from
+   HFSS evaluations and uses Expected Improvement (EI) to select new candidate
+   geometries.
+4. **Feasibility-aware acquisition** — trains a Gaussian-process classifier to
+   estimate the probability that a candidate will produce a valid electromagnetic
+   response and weights EI accordingly.
+5. **Adaptive search-bound remodeling** — detects persistent pressure at the
+   current search-space boundaries and expands the affected geometric variables
+   in a coordinated manner.
+6. **Fabrication-oriented validation** — rounds the best geometry to the selected
+   fabrication precision and revalidates it in HFSS before generating the final
+   tables and publication-quality figures.
+
+## Repository structure
+
+```text
+.
+├── src/
+│   └── pipeline_bo.py                  # main Bayesian-optimization pipeline
+├── notebooks/
+│   └── Pipeline_BO_Comp_clean.ipynb    # cleaned notebook version
+├── data/
+│   └── README.md                       # data-sharing policy and generated data
+├── docs/
+│   └── REPRODUCIBILITY.md              # execution and provenance notes
+├── requirements.txt                    # Python dependencies
+├── environment.yml                     # Conda environment specification
+├── .env.example                        # local HFSS path configuration example
+├── .gitignore                          # excludes local/HFSS files
+├── LICENSE                             # MIT License (code)
+├── CITATION.cff                        # citation metadata
+└── README.md
+```
+
+## Installation
+
+```bash
+git clone https://github.com/yMarcosGabriel/Bayesian-Optimization-Framework.git
+cd Bayesian-Optimization-Framework
+pip install -r requirements.txt
+```
+
+The optimization workflow requires a compatible Python environment together
+with `numpy`, `pandas`, `matplotlib`, `scipy`, and `scikit-learn`.
+
+The HFSS-dependent stages additionally require `pyaedt`, Ansys Electronics
+Desktop/HFSS, and a valid Ansys license. The repository does **not** contain
+the proprietary HFSS project file.
+
+## Reproducing the optimization
+
+The pipeline can be executed with a local HFSS project. Before running, define:
+
+```bash
+export HFSS_PROJECT_PATH=/path/to/your/local/project.aedt
+export RESULTS_DIR=results
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:HFSS_PROJECT_PATH="C:\path\to\your\project.aedt"
+$env:RESULTS_DIR="results"
+```
+
+Then run:
+
+```bash
+python src/pipeline_bo.py
+```
+
+The target frequency and relative-permittivity grids are defined in the
+configuration section of `src/pipeline_bo.py`.
+
+The default workflow performs the complete frequency/$\varepsilon_r$ grid,
+Bayesian optimization, adaptive bound remodeling, final rounded-design
+validation, and figure generation.
+
+## HFSS project and licensing
+
+The original `.aedt` HFSS project is **not distributed** in this repository.
+Likewise, HFSS-generated proprietary project/result files are excluded.
+
+This is intentional: the repository preserves the original optimization
+methodology and software implementation without redistributing third-party
+licensed Ansys/HFSS project assets.
+
+To reproduce the complete electromagnetic workflow, users must provide their
+own compatible HFSS project and valid Ansys license. The external HFSS project
+must be accessible through the `HFSS_PROJECT_PATH` environment variable.
+
+## Generated outputs
+
+For each target `(frequency, relative permittivity)` pair, the pipeline may
+generate:
+
+| File | Description |
+|---|---|
+| `resultados_bo.csv` | Complete optimization history, including geometric variables, objective value, iteration, optimization phase, feasibility and electromagnetic metrics. |
+| `tabela_resultado_final.csv` | Final fabrication-rounded geometry and validated electromagnetic metrics. |
+| `historico_remodelagem_bounds.csv` | Search-bound history and boundary-pressure diagnostics used by the adaptive strategy. |
+| `historico_adaptativo.csv` | Summary of adaptive optimization decisions. |
+| `resumo_grade_er_frequencia.csv` | Summary of the complete frequency/$\varepsilon_r$ optimization grid. |
+| `fig1_convergencia.png` | Bayesian-optimization convergence plot. |
+| `fig2_s11_final.png` | Final $S_{11}$ response. |
+| `fig3_exploracao_espaco.png` | Parameter-space exploration plot. |
+| `fig4_ei_decay.png` | Acquisition-function decay plot, when available. |
+
+Temporary HFSS exports may also be produced during execution. These files are
+not automatically suitable for public redistribution; see [Data availability](#data-availability).
+
+## Data availability
+
+The public repository separates **source code and documentation** from
+HFSS-dependent simulation assets.
+
+The following classes of derived data can be archived when redistribution is
+legally permitted by the applicable Ansys/institutional licensing conditions:
+
+| File | Description |
+|---|---|
+| `resultados_bo.csv` | Optimization-history dataset produced from HFSS evaluations. |
+| `tabela_resultado_final.csv` | Final optimized and fabrication-rounded design. |
+| `resumo_grade_er_frequencia.csv` | Aggregate results for the target frequency/$\varepsilon_r$ grid. |
+| `historico_remodelagem_bounds.csv` | Adaptive search-bound diagnostics. |
+| `historico_adaptativo.csv` | Adaptive optimization decision summary. |
+
+The proprietary `.aedt` project and raw HFSS project/result directories are not
+distributed.
+
+Before publishing simulation-derived CSV files to Zenodo, confirm that their
+redistribution is allowed by the applicable license and institutional policy.
+If redistribution is not permitted, the code and documentation remain openly
+available while the restricted simulation assets are retained locally.
+
+## Citing this work
+
+This repository accompanies a manuscript submitted to *Optical and Quantum
+Electronics*. Until the journal article receives its final DOI, please cite
+the software release using the metadata in [`CITATION.cff`](./CITATION.cff).
+
+The canonical repository is:
+
+[**Bayesian-Optimization-Framework**](https://github.com/yMarcosGabriel/Bayesian-Optimization-Framework)
+
+A DOI for the archived software release will be added after the corresponding
+GitHub release is deposited in Zenodo.
+
+## License
+
+* Code (`src/`, `notebooks/`): [MIT License](./LICENSE)
+* Third-party software, including Ansys Electronics Desktop/HFSS and PyAEDT,
+  remains subject to its respective licenses.
+* HFSS project files and other restricted third-party assets are not covered
+  by the MIT license.
+
+## Contact
+
+Marcos Gabriel — Graduate Program in Electrical Engineering,
+Universidade Federal do Pará (UFPA), Belém, PA, Brazil.
