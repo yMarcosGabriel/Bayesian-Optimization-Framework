@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "A Bayesian Optimization Framework for Joint Frequency-Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"
+title: " Bayesian Optimization Framework for Frequency–Permittivity Joint Antenna Design."
 message: "If you use this software, please cite this repository and the associated manuscript."
 type: software
 authors:
