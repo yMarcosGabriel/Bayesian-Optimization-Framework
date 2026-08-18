@@ -7,6 +7,8 @@ adaptive search-bound remodeling.
 
 This repository accompanies the manuscript *"A Bayesian Optimization Framework for Joint Frequency - Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"* (currently under submission - see [Citing this work](#citing-this-work)).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21995798.svg)](https://doi.org/10.5281/zenodo.21995798)
+
 ## What this pipeline does
 
 1. **Parametric HFSS simulation** — evaluates candidate antenna geometries over
@@ -125,6 +127,12 @@ This includes the HFSS project files, raw simulation outputs, and simulation-der
 The optimization pipeline is provided in full, allowing the methodology, algorithmic implementation, configuration, and data-processing procedures to be inspected and reused. Reproduction of the complete electromagnetic optimization, however, requires access to a compatible Ansys HFSS installation and the corresponding licensed simulation environment.
 
 Accordingly, the public repository contains the open-source code and documentation, but does not include the restricted HFSS simulation data.
+
+## DOI
+
+This software is archived and publicly available through Zenodo:
+
+[https://doi.org/10.5281/zenodo.21995798](https://doi.org/10.5281/zenodo.21995798)
 
 ## Citing this work
 
