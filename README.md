@@ -1,5 +1,4 @@
-# A Bayesian Optimization Framework for Joint Frequency - Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas
-
+#  Bayesian Optimization Framework for Frequency–Permittivity Joint Antenna Design.
 Adaptive Bayesian-optimization pipeline for the inverse design of a micro-scale
 rectangular dielectric resonator antenna (DRA) using Ansys HFSS, Gaussian-process
 surrogate modeling, Expected Improvement, feasibility classification, and
