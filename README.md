@@ -5,7 +5,7 @@ rectangular dielectric resonator antenna (DRA) using Ansys HFSS, Gaussian-proces
 surrogate modeling, Expected Improvement, feasibility classification, and
 adaptive search-bound remodeling.
 
-This repository accompanies the manuscript *"A Bayesian Optimization Framework for Joint Frequency--Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"*" (currently under submission - see [Citing this work](#citing-this-work)).
+This repository accompanies the manuscript *"A Bayesian Optimization Framework for Joint Frequency - Permittivity Inverse Design of Terahertz-Band Micro-Scale Rectangular Dielectric Resonator Antennas"* (currently under submission - see [Citing this work](#citing-this-work)).
 
 ## What this pipeline does
 
@@ -32,13 +32,12 @@ This repository accompanies the manuscript *"A Bayesian Optimization Framework f
 ```text
 .
 ├── pipeline_bo.py                      # main Bayesian-optimization pipeline
-├── Pipeline_BO_Comp.ipynb        # cleaned notebook version
-├── README.md                           # data-sharing policy and generated data
+├── Pipeline_BO_Comp.ipynb              # cleaned notebook version
 ├── REPRODUCIBILITY.md                  # execution and provenance notes
 ├── requirements.txt                    # Python dependencies
 ├── environment.yml                     # Conda environment specification
 ├── .env.example                        # local HFSS path configuration example
-├── .gitignore                          # excludes local/HFSS files
+├── .gitignore                           # excludes local/HFSS files
 ├── LICENSE                             # MIT License (code)
 ├── CITATION.cff                        # citation metadata
 └── README.md
@@ -98,12 +97,12 @@ must be accessible through the `HFSS_PROJECT_PATH` environment variable.
 
 ## Generated outputs
 
-For each target `(frequency, relative permittivity)` pair, the pipeline may
-generate:
+When executed locally, the pipeline generates the following outputs for each
+target `(frequency, relative permittivity)` pair:
 
 | File | Description |
 |---|---|
-| `resultados_bo.csv` | Complete optimization history, including geometric variables, objective value, iteration, optimization phase, feasibility and electromagnetic metrics. |
+| `resultados_bo.csv` | Complete optimization history, including geometric variables, objective value, iteration, optimization phase, feasibility, and electromagnetic metrics. |
 | `tabela_resultado_final.csv` | Final fabrication-rounded geometry and validated electromagnetic metrics. |
 | `historico_remodelagem_bounds.csv` | Search-bound history and boundary-pressure diagnostics used by the adaptive strategy. |
 | `historico_adaptativo.csv` | Summary of adaptive optimization decisions. |
@@ -113,6 +112,10 @@ generate:
 | `fig3_exploracao_espaco.png` | Parameter-space exploration plot. |
 | `fig4_ei_decay.png` | Acquisition-function decay plot, when available. |
 
+These files are generated locally during execution and are not distributed in
+this repository because the underlying electromagnetic simulation data are
+subject to the licensing restrictions described in [Data availability](#data-availability).
+
 ## Data availability
 
 The source code and documentation are openly available in this repository. However, the datasets and electromagnetic simulation data generated through Ansys HFSS are **not distributed** because their redistribution is restricted by the applicable Ansys licensing terms.
@@ -121,7 +124,7 @@ This includes the HFSS project files, raw simulation outputs, and simulation-der
 
 The optimization pipeline is provided in full, allowing the methodology, algorithmic implementation, configuration, and data-processing procedures to be inspected and reused. Reproduction of the complete electromagnetic optimization, however, requires access to a compatible Ansys HFSS installation and the corresponding licensed simulation environment.
 
-Accordingly, the archive associated with this repository contains the open-source code and documentation, but does not include the restricted HFSS simulation data.
+Accordingly, the public repository contains the open-source code and documentation, but does not include the restricted HFSS simulation data.
 
 ## Citing this work
 
